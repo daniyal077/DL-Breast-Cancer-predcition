@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Breast Cancer Prediction</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 class="text-center">Breast Cancer Prediction Using ANN</h1>
+
+    <div class="container mt-4 my-4 form-container">
+      <h3 class="text-center">Fill all values</h3>
+      <form action="/predict" method="post">
+        <label for="radius_mean" class="mb-3">Raius mean</label>
+        <input
+          type="text"
+          class="form-control"
+          name="radius_mean"
+          required
+        /><br />
+
+        <label for="texture_mean" class="mb-3">Texture mean</label>
+        <input
+          type="text"
+          class="form-control"
+          name="texture_mean"
+          required
+        /><br />
+
+        <label for="perimeter_mean" class="mb-3">Perimeter mean</label>
+        <input
+          type="text"
+          class="form-control"
+          name="perimeter_mean"
+          required
+        /><br />
+
+        <label for="area_mean" class="mb-3">Area mean</label>
+        <input
+          type="text"
+          class="form-control"
+          name="area_mean"
+          required
+        /><br />
+
+        <label for="smoothness_mean" class="mb-3">Smoothness_mean</label>
+        <input
+          type="text"
+          class="form-control"
+          name="smoothness_mean"
+          required
+        /><br />
+
+        <label for="compactness_mean" class="mb-3">Compactness mean</label>
+        <input
+          type="text"
+          class="form-control"
+          name="compactness_mean"
+          required
+        /><br />
+
+        <label for="concavity_mean" class="mb-3">Concavity mean</label>
+        <input
+          type="text"
+          class="form-control"
+          name="concavity_mean"
+          required
+        /><br />
+
+        <label for="concave points_mean" class="mb-3"
+          >Concave points_mean</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          name="concave points_mean"
+          required
+        /><br />
+
+        <label for="symmetry_mean" class="mb-3">Symmetry_mean</label>
+        <input
+          type="text"
+          class="form-control"
+          name="symmetry_mean"
+          required
+        /><br />
+
+        <label for="fractal_dimension_mean" class="mb-3"
+          >Fractal_dimension_mean</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          name="fractal_dimension_mean"
+          required
+        /><br />
+
+        <label for="radius_se" class="mb-3">Radius_se</label>
+        <input
+          type="text"
+          class="form-control"
+          name="radius_se"
+          required
+        /><br />
+
+        <label for="texture_se" class="mb-3">Texture_se</label>
+        <input
+          type="text"
+          class="form-control"
+          name="texture_se"
+          required
+        /><br />
+
+        <label for="perimeter_se" class="mb-3">Perimeter_se</label>
+        <input
+          type="text"
+          class="form-control"
+          name="perimeter_se"
+          required
+        /><br />
+
+        <label for="area_se" class="mb-3">Area_se</label>
+        <input type="text" class="form-control" name="area_se" required /><br />
+
+        <label for="smoothness_se" class="mb-3">Smoothness_se</label>
+        <input
+          type="text"
+          class="form-control"
+          name="smoothness_se"
+          required
+        /><br />
+
+        <label for="compactness_se" class="mb-3">Compactness_se</label>
+        <input
+          type="text"
+          class="form-control"
+          name="compactness_se"
+          required
+        /><br />
+
+        <label for="concavity_se" class="mb-3">Concavity_se</label>
+        <input
+          type="text"
+          class="form-control"
+          name="concavity_se"
+          required
+        /><br />
+
+        <label for="concave points_se" class="mb-3">concave points_se</label>
+        <input
+          type="text"
+          class="form-control"
+          name="concave points_se"
+          required
+        /><br />
+
+        <label for="symmetry_se" class="mb-3">Symmetry_se</label>
+        <input
+          type="text"
+          class="form-control"
+          name="symmetry_se"
+          required
+        /><br />
+
+        <label for="fractal_dimension_se" class="mb-3"
+          >Fractal_dimension_se</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          name="fractal_dimension_se"
+          required
+        /><br />
+
+        <label for="radius_worst" class="mb-3">Radius_worst</label>
+        <input
+          type="text"
+          class="form-control"
+          name="radius_worst"
+          required
+        /><br />
+
+        <label for="texture_worst" class="mb-3">Texture_worst</label>
+        <input
+          type="text"
+          class="form-control"
+          name="texture_worst"
+          required
+        /><br />
+
+        <label for="perimeter_worst" class="mb-3">Perimeter_worst</label>
+        <input
+          type="text"
+          class="form-control"
+          name="perimeter_worst"
+          required
+        /><br />
+
+        <label for="area_worst" class="mb-3">Area_worst</label>
+        <input
+          type="text"
+          class="form-control"
+          name="area_worst"
+          required
+        /><br />
+
+        <label for="smoothness_worst" class="mb-3">Smoothness_worst</label>
+        <input
+          type="text"
+          class="form-control"
+          name="smoothness_worst"
+          required
+        /><br />
+
+        <label for="compactness_worst" class="mb-3">Compactness_worst</label>
+        <input
+          type="text"
+          class="form-control"
+          name="compactness_worst"
+          required
+        /><br />
+
+        <label for="concavity_worst" class="mb-3">Concavity_worst</label>
+        <input
+          type="text"
+          class="form-control"
+          name="concavity_worst"
+          required
+        /><br />
+
+        <label for="concave points_worst" class="mb-3"
+          >Concave points_worst</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          name="concave points_worst"
+          required
+        /><br />
+
+        <label for="symmetry_worst" class="mb-3">Symmetry_worst</label>
+        <input
+          type="text"
+          class="form-control"
+          name="symmetry_worst"
+          required
+        /><br />
+
+        <label for="fractal_dimension_worst" class="mb-3"
+          >Fractal_dimension_worst</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          name="fractal_dimension_worst"
+          required
+        /><br />
+
+        <button type="submit" class="btn btn-primary mt-3">Predict</button>
+      </form>
+    </div>
+    <div class="container">
+      {% if result %}
+      <div class="prediction-result">
+        <p>Prediction:</p>
+        <p>{{ result }}</p>
+      </div>
+      {% endif %}
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
